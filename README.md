@@ -1,4 +1,4 @@
-<img src="./logo.png" width="400">
+<img src="./logo.png">
 
 
 ## Description
@@ -25,19 +25,14 @@ Bring your images together in a folder (exp: DATADIR) and add an ```input-config
 
 ![screenshot](./docs/images/screenshot-1.png)
 
-In the ```app/app-config.yml``` file, change the datadir parameter to the path of your folder (DATADIR for our example) and run the script.
+Run the script:
 
     $ git clone https://github.com/Zied-Guesmi/color-transfer.git && cd color-transfer/
     $ python3 app/src/app.py path/to/datadir (if empty it defaults to '/iexec')
 
-The ```DATADIR/out/``` folder contains the output images with colored being transfered.
+The ```DATADIR/out/``` folder contains the new images.
 
 ![screenshot](./docs/images/screenshot-2.png)
-
-
-## Supported image types
-
-**jpeg**, **bmp**, **png**  
 
 
 ## Dependencies
@@ -46,7 +41,7 @@ The ```DATADIR/out/``` folder contains the output images with colored being tran
 - [opencv](https://opencv.org/)
 - [color_transfer](https://pypi.org/project/color_transfer/)
 
-
+d
 ## Docker deployment
 
 After installing [docker](https://docs.docker.com/install/) and preparing your DATADIR folder, just grab the docker image from dockerhub and run it:
@@ -71,8 +66,6 @@ Install system dependencies:
 
     # ubuntu as an example
     $ apt-get update && apt-get install -y \
-        libtesseract-dev \
-        libsm6 \
         python3 \
         python3-pip
 
