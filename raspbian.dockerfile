@@ -1,4 +1,4 @@
-FROM ziedguesmi/opencv:3.4.1-raspbian
+FROM ziedguesmi/opencv:3-raspbian
 
 LABEL maintainer="Zied Guesmi <guesmy.zied@gmail.com>"
 LABEL version="1.0"
@@ -21,8 +21,8 @@ RUN mkdir /iexec
 
 RUN [ "cross-build-end" ]
 
-COPY ./app /object-detector
+COPY ./app /color-transfer
 
-WORKDIR /object-detector
+WORKDIR /color-transfer
 
-ENTRYPOINT [ "/object-detector/entrypoint" ]
+ENTRYPOINT [ "/color-transfer/entrypoint" ]
