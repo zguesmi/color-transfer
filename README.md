@@ -2,8 +2,8 @@
 
 
 ## Description
-This app takes two images as input and transfers colors from one to the other.
-Credit: [pyimagesearch](https://www.pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/)  
+This app takes two images as input and transfers colors from one to the other.  
+Credit: [pyimagesearch](https://www.pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/)
 
 ![demo](./docs/images/demo-1.png)
 
