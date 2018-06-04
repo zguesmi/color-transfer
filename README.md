@@ -2,11 +2,15 @@
 
 
 ## Description
+This app takes two images as input and transfers colors from one to the other.
 Credit: [pyimagesearch](https://www.pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/)  
-// TODO  
-![demo](./docs/images/demo-1.png)  
+
+![demo](./docs/images/demo-1.png)
+
 ![demo](./docs/images/demo-2.png)  
+
 ![demo](./docs/images/demo-3.png)  
+
 ![demo](./docs/images/demo-4.png)
 
 ## Usage
@@ -23,7 +27,7 @@ Bring your images together in a folder (exp: DATADIR) and add an ```input-config
       source: <image-5>
       target: <image-6>
 
-![screenshot](./docs/images/screenshot-1.png)
+![screenshot](./docs/images/screenshot-1.jpg)
 
 Run the script:
 
