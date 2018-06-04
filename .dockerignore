@@ -1,0 +1,12 @@
+app/src/__pycache__
+DATADIR
+DATADIR.old
+LICENSE
+README.md
+_config.yml
+datadir.sh
+iexec.js
+images
+wallet.json
+account.json
+trash.py
