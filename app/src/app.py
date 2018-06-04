@@ -1,18 +1,18 @@
 # usage: python3 app.py path/to/datadir (if empty default to /iexec)
-
+# import argparse
 import os
-import sys
 import subprocess
+import sys
 
-from collections import OrderedDict
 import imghdr
+import json
+from collections import OrderedDict
 import yaml
 import yamlordereddictloader
-import json
 
 from color_transfer_ import ColorTransfer
-import exceptions_ as exceptions_
 from consensus import Consensus
+import exceptions_ as exceptions_
 
 
 class Flag:
@@ -29,12 +29,17 @@ class App:
     _CONSENSUS = 'consensus.iexec'
 
     def __init__(self):
-        self._datadir = '/iexec' if sys.argv[1] is None else os.path.abspath(sys.argv[1])
+        self._datadir = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else '/iexec'
         self._read_input_config_file()
         try:
             self._prepare_datadir()
         except Exception as e: 
             raise exceptions_.Fatal(err=e)
+
+    # def parseArgs(self):
+    #     argParser = argparse.ArgumentParser()
+    #     argParser.add_argument('datadir', required=False, help='Path to input folder', type=str)
+    #     self.args = vars(argParser.parse_args())
 
     def _paths(self, key):
         return {

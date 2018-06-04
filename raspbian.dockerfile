@@ -6,12 +6,11 @@ LABEL version="1.0"
 RUN [ "cross-build-start" ]
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        libgtk2.0-dev \
-        python3 \
+        # libgtk2.0-dev \
+        # libpng12-dev \
         python3-pip \
-        python3-setuptools \
         && \
-    pip3 install PyYAML yamlordereddictloader && \
+    pip3 install PyYAML yamlordereddictloader color_transfer && \
     apt-get remove -y python3-pip && \
     apt-get autoremove -y && \
     apt-get clean && \
