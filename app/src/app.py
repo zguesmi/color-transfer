@@ -1,5 +1,4 @@
 # usage: python3 app.py path/to/datadir (if empty default to /iexec)
-# import argparse
 import os
 import subprocess
 import sys
@@ -35,11 +34,6 @@ class App:
             self._prepare_datadir()
         except Exception as e: 
             raise exceptions_.Fatal(err=e)
-
-    # def parseArgs(self):
-    #     argParser = argparse.ArgumentParser()
-    #     argParser.add_argument('datadir', required=False, help='Path to input folder', type=str)
-    #     self.args = vars(argParser.parse_args())
 
     def _paths(self, key):
         return {

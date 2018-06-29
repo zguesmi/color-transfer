@@ -45,7 +45,7 @@ The ```DATADIR/out/``` folder contains the new images.
 - [opencv](https://opencv.org/)
 - [color_transfer](https://pypi.org/project/color_transfer/)
 
-d
+
 ## Docker deployment
 
 After installing [docker](https://docs.docker.com/install/) and preparing your DATADIR folder, just grab the docker image from dockerhub and run it:

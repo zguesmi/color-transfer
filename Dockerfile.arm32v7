@@ -1,0 +1,32 @@
+FROM arm32v7/ubuntu:18.04
+
+LABEL maintainer="Zied Guesmi <guesmy.zied@gmail.com>"\
+      version="1.0"
+
+# start cross compilation
+COPY ./qemu-arm-static /usr/bin/qemu-arm-static
+
+COPY requirements.txt /color-transfer/requirements.txt
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        libgtk2.0-dev \
+        python3 \
+        python3-pip \
+        python3-setuptools \
+        && \
+    pip3 install -r /color-transfer/requirements.txt --no-cache-dir && \
+    rm /color-transfer/requirements.txt && \
+    apt-get remove --autoremove -y python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN mkdir /iexec
+
+# stop cross compilation
+RUN rm /usr/bin/qemu-arm-static
+
+COPY ./app /color-transfer
+
+WORKDIR /color-transfer
+
+ENTRYPOINT [ "/color-transfer/entrypoint" ]
